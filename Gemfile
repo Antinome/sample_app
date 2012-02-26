@@ -25,7 +25,8 @@ group :test do
   gem 'rspec', '~>2.8.0'
   gem 'autotest'
   gem 'autotest-standalone'
-  gem 'webrat', '~>0.7.3'
+  gem 'webrat', '~>0.7.3'  
+  gem 'ZenTest', '=4.5.0'
 end
 
 gem 'jquery-rails'
