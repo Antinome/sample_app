@@ -129,6 +129,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ZenTest (= 4.5.0)
   autotest
   autotest-standalone
   coffee-rails (~> 3.1.1)
