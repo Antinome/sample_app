@@ -7,7 +7,7 @@ describe PagesController do
     
     #define base title here
     
-    @base_title = "Ruby on Rails Sample App"
+    @base_title = "Ruby on Rails Tutorial Sample App"
     
   end
 
