@@ -1,10 +1,14 @@
 source 'http://rubygems.org'
 
 ruby "1.9.3"
-gem 'rails'
+gem  'rails'
 gem 'pg'
 gem 'jquery-rails'
 gem 'heroku'
+
+group :production do
+  gem 'thin'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
