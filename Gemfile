@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
 gem 'rails'
-gem 'sqlite3'
+gem 'pg'
 gem 'jquery-rails'
+gem 'heroku'
 
 # Gems used only for assets and not required
 # in production environments by default.
