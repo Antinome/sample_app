@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  resources :categories
+
   get "pages/home"
 
   get "pages/contact"
