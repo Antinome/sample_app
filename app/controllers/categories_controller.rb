@@ -1,13 +1,18 @@
 class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
+  
+  def restructure
+    _parent = Category.find(params[:category_id].gsub('category_',''))
+    _child = Category.find(params[:subcategory_id].gsub('category_',''))
+    _child.move_to_child_of(_parent)
+    _child.update_depth
+    @categories = Category.roots
+    render :partial => 'categories_tree'
+  end
+  
   def index
-    @categories = Category.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @categories }
-    end
+    @categories = Category.roots
   end
 
   # GET /categories/1

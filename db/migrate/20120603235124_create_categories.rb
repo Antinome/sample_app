@@ -1,17 +1,20 @@
 class CreateCategories < ActiveRecord::Migration
+  
+  #Category(id: integer, name: string, parent_id: integer, lft: integer, rgt: integer,
+  #         depth: integer, created_at: datetime, updated_at: datetime)
+  
   def change
     create_table :categories do |t|
-      t.string :id
-      t.string :integer,
+      t.integer :id
       t.string :name
-      t.string :string,
-      t.string :parent_id
-      t.string :integer,
-      t.string :lft
-      t.string :integer,
-      t.string :rgt
-      t.string :integer
-
+      t.integer :parent_id
+      t.integer :lft
+      t.integer :rgt
+      t.integer :depth
+      
+      t.datetime :created_at
+      t.datetime :updated_at
+      
       t.timestamps
     end
   end

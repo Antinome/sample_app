@@ -5,6 +5,7 @@ gem  'rails'
 gem 'pg'
 gem 'jquery-rails'
 gem 'heroku'
+gem 'awesome_nested_set'
 
 group :production do
   gem 'thin'

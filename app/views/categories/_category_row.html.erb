@@ -1,0 +1,26 @@
+<tr class="<%= cycle('odd', 'even') -%>" style="cursor: move;"  id="category_<%= category.id -%>">
+  <td style="padding-left: <%= (1 * category.level) + 1 -%>em;">
+    <%=h category.name -%>
+  </td>
+  <td>
+    <%= link_to 'Show', category -%> | 
+    <%= link_to 'Edit', edit_category_path(category) -%>
+  </td>
+</tr>
+<%= draggable_element(
+      "category_#{category.id}",
+      :ghosting => true,
+      :revert => true
+    ) 
+-%>
+<%= drop_receiving_element(
+       "category_#{category.id}",
+       :update => 'catlist',
+       :with => "'subcategory_id=' + element.id",
+       :url => { :action => 'restructure', :category_id => category.id },
+       :hoverclass => "row_highlight"
+     )
+-%>
+<%- category.children.each do |subcat| -%>
+  <%= render :partial => 'category_row', :locals => {:category => subcat} -%>
+<%- end -%>
